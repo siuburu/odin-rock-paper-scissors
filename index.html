@@ -7,16 +7,28 @@
 </head>
 
 <body>
-    <div class="content">
+    <header class="header">
+        <h1>Rock Paper Scissors</h1>
+    </header>
+    <div class="container">
         <div class="results">
             <h3>Score</h3>
             <p id="playerScore">Player: 0</p>
             <p id="computerScore">Computer : 0</p>
         </div>
-        <button class="button" id="rock">Rock</button>
-        <button class="button" id="paper">Paper</button>
-        <button class="button" id="scissor">Scissor</button>
+        <div class="buttons">
+            <button id="rock"><img src="img/rock.svg"></button>
+            <button id="paper"><img src="img/paper.svg"></button>
+            <button id="scissor"><img src="img/scissors.svg"></button>
+        </div>
+        <div class="modal" id="modalTeste">
+            <div class="modal-content">
+                <button id="restartGame">Restart Game</button>
+                <span>Close this windows.</span>
+            </div>
+        </div>
     </div>
+    <footer>2022</footer>
 </body>
 <script src="./script.js"></script>
 

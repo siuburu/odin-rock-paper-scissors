@@ -1,12 +1,12 @@
+//game functions
+
 const choices = ["rock", "paper", "scissors"];
+let computerWins = 0;
+let playerWins = 0;
 
 function getComputerChoice() {
 	return choices[Math.floor(Math.random() * 3)];
 }
-
-let computerWins = 0;
-let playerWins = 0;
-
 function playRound(playerSelection, computerSelection) {
 	playerSelection = playerSelection.toLowerCase();
 	const scorePlayer = document.querySelector("#playerScore");
@@ -40,17 +40,27 @@ function playRound(playerSelection, computerSelection) {
 			}
 		}
 	}
-	const results = document.querySelector(".results");
+}
 
-	if (computerWins === 5) {
-		const winMessage = document.createElement("p");
-		winMessage.textContent = "Computer is the ultimate winner.";
-		results.appendChild(winMessage);
-		computerWins = 0;
-		playerWins = 0;
-	} else if (playerWins === 5) {
-		const winMessage = document.createElement("p");
-		winMessage.textContent = "Player is the ultimate winner.";
-		results.appendChild(winMessage);
+//ui part
+
+const buttons = document.querySelectorAll("button");
+const modal = document.getElementById("modalTeste");
+const restartBtn = document.getElementById("restartGame");
+restartBtn.addEventListener("click", () => restartGame());
+buttons.forEach((button) => {
+	button.addEventListener("click", () => {
+		playRound(button.id, getComputerChoice());
+	});
+});
+window.onclick = function (event) {
+	if (event.target == modal) {
+		modal.style.display = "none";
 	}
+};
+function restartGame() {
+	playerWins = 0;
+	computerWins = 0;
+	scorePlayer.textContent = `Player: ${playerWins}`;
+	scoreComputer.textContent = `Computer: ${computerWins}`;
 }
