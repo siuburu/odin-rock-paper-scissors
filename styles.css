@@ -13,31 +13,77 @@ body {
 	min-height: 100vh;
 }
 img {
-	max-width: 250px;
-	max-height: 250px;
+	max-width: 150px;
+	max-height: 150px;
 }
+button {
+	border: none;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: pointer;
+	outline: none;
+}
+
 .container {
 	display: flex;
+	flex: 1;
 	flex-flow: column;
-	max-width: 1100px;
+	width: 100%;
 	margin: 0 auto;
 	padding: 0 30px;
+	align-items: center;
+	background-color: antiquewhite;
 }
 .container .buttons {
 	display: flex;
+	flex: 1;
 	flex-direction: row;
-	justify-content: space-between;
-	background-color: aqua;
+	gap: 40px;
 }
-
+.gameBtn {
+	border-radius: 12px;
+	max-width: 100px;
+	max-height: 100px;
+	flex: 1;
+}
+.gameBtn img {
+	max-width: inherit;
+	max-height: inherit;
+}
 .header {
 	display: flex;
 	flex-flow: column;
 	color: coral;
 	background-color: #333;
 	align-items: center;
+	padding: 30px 0;
+}
+.title {
+	font-size: 32px;
+}
+.footer {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
 }
 
+.container .scoreBoard {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	padding: 12px 0;
+}
+.scoreplay {
+	display: flex;
+	align-content: space-between;
+	gap: 50px;
+}
+.scoreBox {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
 .modal {
 	display: none;
 	position: fixed;

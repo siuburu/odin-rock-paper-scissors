@@ -2,33 +2,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header class="header">
-        <h1>Rock Paper Scissors</h1>
+        <h1 class="title">Rock Paper Scissors</h1>
     </header>
-    <div class="container">
-        <div class="results">
-            <h3>Score</h3>
-            <p id="playerScore">Player: 0</p>
-            <p id="computerScore">Computer : 0</p>
-        </div>
-        <div class="buttons">
-            <button class="gameBtn" id="rock"><img src="img/rock.svg"></button>
-            <button class="gameBtn" id="paper"><img src="img/paper.svg"></button>
-            <button class="gameBtn" id="scissor"><img src="img/scissors.svg"></button>
-        </div>
-        <div class="modal" id="modalTeste">
-            <div class="modal-content">
-                <button id="restartGame">Restart Game</button>
-                <span>Close this windows.</span>
+    <main>
+        <div class="container">
+            <div class="scoreBoard">
+                <h1 class="scoreInfo">Make your play</h1>
+                <h2 class="scoreMsg">This is a best of 5 match</h2>
+
+                <div class="scorePlay">
+                    <div class="scoreBox">
+                        <img id="playerMove" src="img/question-mark.svg">
+                        <p id="playerScore">Player: 0</p>
+                    </div>
+                    <div class="scoreBox">
+                        <img id="computerMove" src="img/question-mark.svg">
+                        <p id="computerScore">Computer : 0</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="gameBtn" id="rock"><img src="img/rock.svg"></button>
+                <button class="gameBtn" id="paper"><img src="img/paper.svg"></button>
+                <button class="gameBtn" id="scissor"><img src="img/scissor.svg"></button>
+            </div>
+            <div class="modal" id="modalTeste">
+                <div class="modal-content">
+                    <button id="restartGame">Restart Game</button>
+                    <span>Close this windows.</span>
+                </div>
             </div>
         </div>
-    </div>
-    <footer>2022</footer>
+    </main>
+    <footer class="footer">2022</footer>
 </body>
 <script src="./script.js"></script>
 
