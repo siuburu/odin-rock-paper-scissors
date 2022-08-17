@@ -84,7 +84,7 @@ button {
 	align-items: center;
 	width: inherit;
 }
-.scoreplay {
+.scorePlay {
 	display: flex;
 	margin-top: 40px;
 	align-content: space-between;
