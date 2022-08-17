@@ -30,7 +30,10 @@ function playRound(playerSelection, computerSelection) {
 				playerWins++;
 				scorePlayer.textContent = `Player: ${playerWins}`;
 				scoreInfo.textContent = "You won.";
-				scoreMsg.textContent = getWonMsg(playerSelection, computerSelection);
+				modalEmoji.textContent = scoreMsg.textContent = getWonMsg(
+					playerSelection,
+					computerSelection
+				);
 			} else {
 				computerWins++;
 				scoreComputer.textContent = `Computer: ${computerWins}`;
@@ -62,11 +65,15 @@ function playRound(playerSelection, computerSelection) {
 				scoreMsg.textContent = getLostMsg(playerSelection, computerSelection);
 			}
 		}
-		if (playerWins === 5 || computerWins === 5) {
-			modal.style.display = "block";
-			buttons.forEach((button) => {
-				button.disabled = true;
-			});
+		if (playerWins >= 5 || computerWins >= 5) {
+			modal.style.display = "flex";
+			if (playerWins >= 5) {
+				modalEmoji.textContent = "🎉";
+				modalMsg.textContent = "You won";
+			} else if (computerWins >= 5) {
+				modalEmoji.textContent = "😢";
+				modalMsg.textContent = "You lost";
+			}
 		}
 	}
 }
@@ -74,8 +81,8 @@ function playRound(playerSelection, computerSelection) {
 //ui part
 
 const buttons = document.querySelectorAll(".gameBtn");
-const modal = document.getElementById("modalTeste");
-const restartBtn = document.getElementById("restartGame");
+const modal = document.querySelector(".modal");
+const restartBtn = document.querySelector(".restartGame");
 const playerMove = document.getElementById("playerMove");
 const computerMove = document.getElementById("computerMove");
 
@@ -83,7 +90,11 @@ const scorePlayer = document.querySelector("#playerScore");
 const scoreComputer = document.querySelector("#computerScore");
 const scoreInfo = document.querySelector(".scoreInfo");
 const scoreMsg = document.querySelector(".scoreMsg");
+const modalMsg = document.querySelector(".modalMsg");
+const modalEmoji = document.querySelector(".modalEmoji");
+const closeBtn = document.querySelector(".close");
 restartBtn.addEventListener("click", () => restartGame());
+closeBtn.addEventListener("click", () => (modal.style.display = "none"));
 
 buttons.forEach((button) => {
 	button.addEventListener("click", () => {
@@ -106,5 +117,6 @@ function restartGame() {
 	modal.style.display = "none";
 	playerMove.src = "img/question-mark.svg";
 	computerMove.src = "img/question-mark.svg";
-	buttons;
+	scoreInfo.textContent = "Make your play";
+	scoreMsg.textContent = "This is a best of 5 match";
 }

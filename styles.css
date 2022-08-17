@@ -3,14 +3,23 @@
 	padding: 0;
 	margin: 0;
 }
+html {
+	position: relative;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
 body {
 	font-family: "Poppins", sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
 	color: #333;
 	display: flex;
-	flex-flow: column;
+	height: 100%;
+	flex: 1;
+	flex-direction: column;
 	min-height: 100vh;
+	background-color: #888;
 }
 img {
 	max-width: 150px;
@@ -30,21 +39,24 @@ button {
 	flex: 1;
 	flex-flow: column;
 	width: 100%;
-	margin: 0 auto;
+	height: auto;
 	padding: 0 30px;
 	align-items: center;
-	background-color: antiquewhite;
 }
-.container .buttons {
-	display: flex;
+.buttons {
 	flex: 1;
+	display: flex;
+	flex-basis: 100%;
 	flex-direction: row;
 	gap: 40px;
+	width: inherit;
+	justify-content: center;
 }
 .gameBtn {
 	border-radius: 12px;
 	max-width: 100px;
 	max-height: 100px;
+	background-color: rgb(202, 197, 195);
 	flex: 1;
 }
 .gameBtn img {
@@ -55,29 +67,30 @@ button {
 	display: flex;
 	flex-flow: column;
 	color: coral;
-	background-color: #333;
 	align-items: center;
 	padding: 30px 0;
+	background-color: #333;
 }
 .title {
 	font-size: 32px;
 }
-.footer {
-	display: flex;
-	flex-flow: column;
-	align-items: center;
-}
 
 .container .scoreBoard {
 	display: flex;
+	flex: 1;
+	flex-basis: 100%;
 	flex-flow: column;
+	justify-content: center;
 	align-items: center;
-	padding: 12px 0;
+	width: inherit;
 }
 .scoreplay {
 	display: flex;
+	margin-top: 40px;
 	align-content: space-between;
 	gap: 50px;
+	justify-content: center;
+	width: inherit;
 }
 .scoreBox {
 	display: flex;
@@ -95,12 +108,55 @@ button {
 	overflow: auto;
 	background-color: rgb(0, 0, 0);
 	background-color: rgba(0, 0, 0, 0.4);
+	font-family: "Roboto", sans-serif;
+	padding: 0;
+	margin: 0;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }
 
 .modal-content {
-	background-color: #fefefe;
-	margin: 15% auto;
-	padding: 20px;
-	border: 1px solid #888;
-	width: 80%;
+	width: 320px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #fff;
+	color: #000;
+	text-align: center;
+	border-radius: 20px;
+	padding: 30px 30px 70px;
+}
+.close {
+	width: 30px;
+	font-size: 20px;
+	color: #c0c5cb;
+	align-self: flex-end;
+	background-color: transparent;
+	border: none;
+	margin-bottom: 10px;
+}
+
+.modalImg {
+	width: 82px;
+	margin-bottom: 15px;
+}
+
+.modalMsg {
+	margin-bottom: 40px;
+	font-size: 18px;
+}
+
+.modalEmoji {
+	font-size: 120px;
+}
+.restartGame {
+	background-color: #3b3838;
+	border: none;
+	border-radius: 5px;
+	width: 200px;
+	padding: 14px;
+	font-size: 16px;
+	color: white;
+	box-shadow: 0px 6px 18px -5px rgba(237, 103, 85, 1);
 }
