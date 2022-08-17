@@ -2,7 +2,7 @@
 
 const choices = ["rock", "paper", "scissor"];
 let computerWins = 0;
-let playerWins = 0;
+let playerWins = 0
 function getComputerChoice() {
 	return choices[Math.floor(Math.random() * 3)];
 }
@@ -119,4 +119,5 @@ function restartGame() {
 	computerMove.src = "img/question-mark.svg";
 	scoreInfo.textContent = "Make your play";
 	scoreMsg.textContent = "This is a best of 5 match";
+
 }
